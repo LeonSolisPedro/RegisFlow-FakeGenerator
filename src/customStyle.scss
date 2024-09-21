@@ -1,0 +1,31 @@
+$border-radius: 21px !default;
+
+$btn-padding-y:               11px;
+$btn-padding-x:               16px;
+
+
+$btn-font-size:               16.5px;
+
+
+$table-cell-padding-y:        1.1rem;
+$table-cell-padding-x:        1.1rem;
+
+
+// $btn-border-radius:           15px;
+
+.card {
+  --tw-shadow: 0 0 2px 0 rgba(0,0,0,.05),0 4px 6px 0 rgba(0,0,0,.02);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+
+
+.table-responsive {
+  --tw-shadow: 0 0 2px 0 rgba(0,0,0,.05),0 4px 6px 0 rgba(0,0,0,.02);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+
+.logo-login {
+    max-width: 42px;
+}
+
+@import "~bootstrap/scss/bootstrap";
