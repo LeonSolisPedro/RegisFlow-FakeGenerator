@@ -18,3 +18,17 @@
 .superbigtableusers tbody tr:last-child {
   border: transparent;
 }
+
+/* Exclusivo para fakegenerator */
+.label-pedrito {
+  margin-top: 12px;
+}
+
+
+.inputtexterrors-pedrito {
+  width: 100px !important;
+}
+
+.inputtextseed-pedrito {
+  width: 120px !important;
+}
