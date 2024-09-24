@@ -32,3 +32,8 @@
 .inputtextseed-pedrito {
   width: 120px !important;
 }
+
+.smalluuid {
+  font-size: 14px;
+  white-space: nowrap;
+}

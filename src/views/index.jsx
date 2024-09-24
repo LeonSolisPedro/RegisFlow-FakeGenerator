@@ -100,6 +100,11 @@ export default function Index() {
             <img src={Logo} alt="Logo" width="30" height="30" className="d-inline-block align-text-top logo-navbar-pedrito" />
             RegisFlow
           </a>
+          <div className='me-auto'>
+            <span className="navbar-text">
+               <a href="/" className="text-decoration-none">User Data Generation</a>
+            </span>
+          </div>
           <div>
             <span className="navbar-text">
               Welcome Pedro León!
@@ -145,20 +150,20 @@ export default function Index() {
               <thead className="table-light">
                 <tr>
                   <th>Id</th>
-                  <th>GUID</th>
+                  <th>Random identifier</th>
                   <th>Full name</th>
                   <th>Address</th>
                   <th>Phone number</th>
                 </tr>
               </thead>
               <tbody>
-                {users.map(x => (
-                  <tr>
-                    <td>{x.at(0)}</td>
+                {users.map((x, i) => (
+                  <tr key={x.at(0)}>
+                    <td className='smalluuid'>{i+1}</td>
+                    <td className='smalluuid'>{x.at(0)}</td>
                     <td>{x.at(1)}</td>
                     <td>{x.at(2)}</td>
                     <td>{x.at(3)}</td>
-                    <td>{x.at(4)}</td>
                   </tr>
                 ))}
               </tbody>
