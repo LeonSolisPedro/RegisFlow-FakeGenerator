@@ -115,8 +115,9 @@ export default function Index() {
           <div className='d-flex'>
             <label className='label-pedrito me-2'>Region:</label>
             <select className='form-select' value={region} onChange={e => { setRegion(e.target.value);}}>
-              <option value="MXN">México</option>
+              <option value="MXN">Mexico</option>
               <option value="USA">USA</option>
+              <option value="ITA">Italy</option>
             </select>
           </div>
 
