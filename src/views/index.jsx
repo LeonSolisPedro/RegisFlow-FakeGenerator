@@ -42,6 +42,17 @@ export default function Index() {
   const seeddata = useRef({});
 
 
+  const handleNumberChange = (e) => {
+    let number = e.target.value;
+    number = (number > 1000 || number < 0) ? 0 : number
+    number = Math.floor(number * 10) / 10;
+    let result = (number / 100).toFixed(3)
+    result = (result * 1000) / 1000
+    setProbability(result)
+  };
+
+
+
   useEffect(() => {
     FetchInitial()
   }, [])
@@ -60,14 +71,6 @@ export default function Index() {
     setUsers(result.data.table)
     seeddata.current = result.data.seeddata
   }
-
-
-  const handleKeyDown = (e) => {
-    const charCode = e.which || e.keyCode;
-    if (charCode >= 48 && charCode <= 57 || charCode == 8)
-      return
-    e.preventDefault();
-  };
 
   //Fetchs again
   const RegeneratesScratch = async () => {
@@ -128,8 +131,8 @@ export default function Index() {
 
           <div className='d-flex'>
             <label className='label-pedrito me-2'>Errors:</label>
-            <input type="range" className="form-range label-pedrito" value={probability} onChange={(e) => setProbability(e.target.value)} onMouseUp={RegeneratesScratch} onTouchEnd={RegeneratesScratch}  min="0" step="100" max="1000"></input>
-            <input onKeyDown={handleKeyDown} type='number' value={probability} onChange={(e) => setProbability(e.target.value)} onBlur={RegeneratesScratch} className='form-control ms-2 inputtexterrors-pedrito' />
+            <input type="range" className="form-range label-pedrito" min="0" max="10" value={probability} onChange={(e) => setProbability(parseFloat(e.target.value))} onMouseUp={RegeneratesScratch} onTouchEnd={RegeneratesScratch} />
+            <input type="number" value={(probability * 100).toFixed(1).replace(/[.,]0$/, "")} onChange={handleNumberChange} onBlur={RegeneratesScratch} className='form-control ms-2 inputtexterrors-pedrito' />
           </div>
 
           <div className="d-flex">
